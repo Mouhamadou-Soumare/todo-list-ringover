@@ -28,6 +28,6 @@ $ git clone https://github.com/Mouhamadou-Soumare/todo-list-ringover.git
 $ cd todo-list-ringover
 
 # Exécutez le fichier batch pour démarrer l'API et ouvrir la page d'index.
-$ start_todolist.bat
+$ ./start_todolist.bat
 ```
 
