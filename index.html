@@ -1,0 +1,115 @@
+  <!doctype html>
+  <html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ringover Test Technique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+  <header>
+      <nav class="navbar">
+        <div>  
+          <img class="fit-picture" src="./assets/logo.png" alt="logo" >
+        </div> 
+        <h1>Planner</h1>
+      </nav>
+  </header>
+  <div class="container">
+      <div class="todo-list-container">
+          <div class="todo-header">
+              <div class="todo-title"><h2>Tâches</h2></div>
+              <div class="flex-row actions-row">
+                  <div id="create-task">
+                    <button id="open-popup-btn"><svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z" fill="#1C274C"/>
+                      </svg></button>
+                  </div>
+                  <div id="search-task">
+                    <button id="open-search-popup-btn"><svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg></button>
+                  </div>
+              </div>
+          </div>
+          <div class="todo-body">
+            <div class="on-going">
+              <h3>En cours</h3>
+
+              <ul id="task-list">
+
+              </ul>
+
+            </div>
+          <div class="ended">
+            <div class="flex-row"> <h3>Validées</h3>
+              <button id="clear-completed-tasks-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path stroke="#A34343" d="M10 12L14 16M14 12L10 16M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg></button>
+    </div>
+          
+            <ul id="completed-task-list">
+
+            </ul>
+          </div>
+            
+          </div>
+      </div>
+  </div>
+
+  <div class="popup-container">
+    <div id="task-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Créer une nouvelle tâche</h2>
+        <form id="popup-form" class="form-container">
+          <div class="form-row"> <label for="popup-task-title">Titre :</label>
+            <input type="text" id="popup-task-title" placeholder="Titre" required></div>
+        
+          <div class="form-row"><label for="popup-task-desc">Description :</label>
+            <textarea id="popup-task-desc" placeholder="..." required></textarea></div>
+
+          
+          <div class="form-row"> <label for="popup-task-start-date">Date de début :</label>
+            <input type="date" id="popup-task-start-date" required></div>
+
+        
+            <div class="form-row"><button type="submit">Ajouter</button></div>
+            <div id="add-results" class="add-results form-submit-results"></div>
+
+          
+        </form>
+      </div>
+    </div>
+
+    <div id="search-popup" class="popup">
+      <div class="popup-content" >
+        <span class="close-btn">&times;</span>
+        <h2>Rechercher des tâches</h2>
+        <form id="search-form" class="form-container">
+          <div class="form-row">
+            <label for="search-task-title">Titre :</label>
+            <input type="text" id="search-task-title">
+          </div>
+        <!-- <div class="form-row"> <label for="search-task-date">Date de début :</label>
+          <input type="date" id="search-task-date"></div> -->
+        <div class="form-row">        
+          <button type="submit" id="search-task-btn">Rechercher</button>
+        <div id="search-results" class="search-results form-submit-results"></div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="description-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Description de la tâche</h2>
+        <p id="task-description"></p>
+      </div>
+    </div>
+    
+  </div>
+  </body>
+  </html>

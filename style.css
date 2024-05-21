@@ -1,0 +1,319 @@
+/* Styles généraux CSS */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(116deg, rgba(39, 201, 214, 0.2) 1.37%, rgba(127, 163, 254, 0.2) 55.82%, rgba(91, 107, 225, 0.2) 99.49%);
+}
+
+
+h1 {
+	font-size: 2.5rem;
+}
+
+button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.1);
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	position: relative;
+	display: inline-block;
+}
+
+h4 {
+	text-align: center;
+	font-family: 'lato', sans-serif;
+	font-size: 0.8em;
+	color: #666;
+	letter-spacing: 2px;
+	margin: 20px 0 20px 0;
+}
+
+.flex-row {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	align-self: center;
+	place-items: center;
+}
+
+.gap-sm {
+	gap: .5rem;
+}
+
+.gap-std {
+	gap: 1rem !important;
+}
+
+
+/* CSS de la navbar */
+
+header {
+	padding-top: 50px;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	position: sticky;
+	width: 650px;
+	height: 100px;
+	background-color: rgba(45, 126, 133, 0.8);
+	color: white;
+	margin: 0 auto 0;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0 0 1.5px 1px rgba(255, 255, 255, 0.4), 0 0 1.5px 1px rgba(255, 255, 255, 0.4) inset;
+}
+
+
+/* CSS body */
+
+.container {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+.todo-list-container {
+	background-color: rgba(157, 141, 222, 0.8);
+	border-radius: 0 0 10px 10px;
+	margin-top: 10px;
+	padding: 20px 50px;
+	box-shadow: 0 0 1.5px 1px rgba(255, 255, 255, 0.4), 0 0 1.5px 1px rgba(255, 255, 255, 0.4) inset;
+}
+
+.todo-header {
+	border-bottom: 1px solid #fff;
+	padding-bottom: 1rem;
+}
+
+.todo-header .actions-row {
+	justify-content: space-evenly;
+	gap: 2rem;
+}
+
+.todo-title {
+	text-align: center;
+	font-weight: 700;
+	padding: 10px 0;
+}
+
+.todo-title h2 {
+	font-size: 2rem;
+}
+
+.todo-body {
+	padding: 1rem 10px 5px 10px;
+}
+
+.todo-body>div {
+	padding: 0.5rem 0;
+
+}
+
+.todo-body div h3 {
+	padding: 0.5rem 0;
+}
+
+.todo-body ul li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin-bottom: 0.5rem;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: 0.4rem;
+}
+
+
+
+/* CSS permettant de gérer le style des fenêtres modales */
+
+
+.popup-content {
+	padding: 20px;
+}
+
+.close-btn {
+	float: right;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+.popup-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup {
+	background-color: rgba(157, 141, 222, 1);
+	border-radius: 10px;
+	padding: 20px;
+	max-width: 500px;
+	width: 90%;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup.show {
+	display: flex;
+}
+
+#open-search-popup-btn svg path {
+	stroke: rgb(28, 39, 76);
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-container .form-row {
+	display: flex;
+	flex-direction: column;
+	padding: 0.2rem;
+}
+
+.form-container .form-row label {
+	font-size: 1.5rem;
+	padding: 0.5rem 0;
+}
+
+.form-container .form-row input,
+.form-container .form-row textarea {
+	display: block;
+	margin: 0;
+	padding: 0.5rem 1.6rem;
+	color: inherit;
+	width: 100%;
+	font-size: 1.2rem;
+	font-weight: inherit;
+	line-height: 1.4;
+	border: none;
+	border-radius: 0.4rem;
+	transition: box-shadow 300ms;
+}
+
+.form-container .form-row button {
+	padding: 0.5rem 1rem;
+	border-radius: 12px;
+	margin-top: 20px;
+	background-color: rgba(45, 126, 133, 0.8);
+	border: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.form-container .form-row button:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#task-description {
+	overflow-y: scroll;
+	max-height: 500px;
+}
+
+#task-description,
+.form-submit-result {
+	padding: 1rem 1rem 1rem 0;
+	line-height: 1.6;
+}
+
+.show-description-btn {
+	display: flex;
+}
+
+.good-result {
+	font-size: 1.3rem;
+	color: #006769;
+	padding: 2rem 0;
+}
+
+.error-result {
+	font-size: 1.3rem;
+	color: #A34343;
+	padding: 2rem 0;
+}
+
+
+/* Responsive media queries */
+
+@media screen and (max-width: 780px) {
+
+	.navbar,
+	.container {
+		width: 550px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.navbar,
+	.container {
+		width: 450px;
+	}
+
+	.todo-list-container {
+		padding: 20px 20px;
+	}
+
+	.todo-body ul li,
+	#completed-task-list>li>div {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+	.navbar,
+	.container {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 470px) {
+	.navbar {
+		height: 50px;
+	}
+
+	.navbar,
+	.container {
+		width: 80%;
+	}
+
+
+}
